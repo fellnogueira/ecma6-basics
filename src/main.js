@@ -1,10 +1,11 @@
-import {sum} from './functions';
+import {sum} from './functions'; //O caminho ./ relativo, sem isso ele buscaria no node_modules
 import axios from 'axios';
 
 console.log(sum(5, 7));
 
 const arr = [1, 2, 3, 4, 5, 6];
 
+// map faz alterações no array e forach só percorre
 const newArr = arr.map(item => item * 2);
 
 console.log(newArr);
