@@ -8,9 +8,11 @@
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
+    "babel-loader": "8",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "scripts": {
-    "dev": "babel ./main.js -o ./bundle.js -w"
+    "dev": "webpack --mode=development -w"
   }
 }

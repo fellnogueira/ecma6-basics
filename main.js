@@ -1,3 +1,7 @@
+import {sum} from './functions';
+
+console.log(sum(5, 5));
+
 const arr = [1, 2, 3, 4, 5, 6];
 
 const newArr = arr.map(item => item * 2);
