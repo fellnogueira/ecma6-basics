@@ -1,6 +1,6 @@
 import {sum} from './functions';
 
-console.log(sum(5, 5));
+console.log(sum(5, 7));
 
 const arr = [1, 2, 3, 4, 5, 6];
 
@@ -51,3 +51,31 @@ var objeto = {
 };
 
 console.log(objeto);
+
+const minhaPromise = () => new Promise((resolve, reject) => {
+    setTimeout(() => { resolve('OK') }, 2000);
+});
+
+async function executaPromise() {
+    console.log(await minhaPromise());
+    // A próxima linha só executa após a finalização da promise anterior
+    // Dessa forma não é necessário fazer encadeado utilizado o .then
+    console.log(await minhaPromise());
+    
+    // Utilizando .then
+    minhaPromise().then(response => {
+        console.log(response);
+        minhaPromise().then(response => {
+            console.log(response);
+        });
+    });
+}
+
+executaPromise();
+
+// Usar async/await com o retorno pra dentro de uma variavel
+const retorno = async () => {
+    console.log(await minhaPromise());
+}
+
+retorno();
