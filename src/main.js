@@ -1,4 +1,5 @@
 import {sum} from './functions';
+import axios from 'axios';
 
 console.log(sum(5, 7));
 
@@ -79,3 +80,16 @@ const retorno = async () => {
 }
 
 retorno();
+
+class Api {
+    static async getUserInfo(username) {
+        try {
+            const response = await axios.get(`https://api.github.com/users/${username}`);
+            console.log(response);            
+        } catch (error) {
+            console.warn('Erro na API');
+        }
+    }
+}
+
+Api.getUserInfo('fellnogueira');
